@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="/css/themify-icons.css" >
+    <link rel="stylesheet" href="/css/elegant-icons.css" >
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" >
+    <link rel="stylesheet" href="/css/nice-select.css" >
+    <link rel="stylesheet" href="/css/jquery-ui.min.css" >
+    <link rel="stylesheet" href="/css/slicknav.min.css" >
+    <link rel="stylesheet" href="/css/stylesheet.css" >
+    <title>Document</title>
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="header-top">
+        <div class="container">
+            <div class="ht-left">
+                <div class="mail-service">
+                    <i class=" fa fa-envelope"></i>
+                    huytc13@gmail.com
+                </div>
+                <div class="phone-service">
+                    <i class=" fa fa-phone"></i>
+                    +88 909 214 775
+                </div>
+            </div>
+            <div class="ht-right">
+                <a sec:authorize="isAnonymous()" th:href="@{/login}" class="login-panel"><i class="fa fa-user"></i>Đăng Nhập</a>
+                <a sec:authorize="isAuthenticated()" th:href="@{/logout}" class="login-panel"><i class="fa fa-user"></i>Đăng Xuất</a>
+
+                <div class="top-social">
+                    <a href="#"><i class="ti-facebook"></i></a>
+                    <a href="#"><i class="ti-twitter-alt"></i></a>
+                    <a href="#"><i class="ti-linkedin"></i></a>
+                    <a href="#"><i class="ti-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="inner-header">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    <div class="advanced-search">
+                        <button type="button" class="category-btn">Tìm kiếm :</button>
+                        <div class="input-group">
+                            <input type="text" placeholder="Bạn muốn tìm gì ?">
+                            <button type="button"><i class="ti-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-right col-md-3">
+                    <ul class="nav-right">
+                        <li class="heart-icon">
+                            <a href="#">
+                                <i class="icon_heart_alt"></i>
+                                <span>0</span>
+                            </a>
+                        </li>
+                        <li class="cart-icon">
+                            <a th:href="@{/cart}">
+                                <i class="icon_bag_alt"></i>
+                                <span th:text="${cartCount}">0</span>
+<!--                               <a  th:href="@{/cart}"><img src="images/cart.png" width="30px" height="30px"></a>-->
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-item">
+        <div class="container">
+            <div class="nav-depart">
+                <div class="depart-btn">
+                    <i class="ti-menu"></i>
+                    <span>Tất cả sản phẩm</span>
+                    <ul class="depart-hover" >
+                        <li class="active"><a href="#">Cốc giữ nhiệt</a></li>
+                        <li><a href="#">Bình giữ nhiệt</a></li>
+                        <li><a href="#">Hộp cơm</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="nav-menu mobile-menu">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang chủ</a></li>
+                    <li><a th:href="@{/shop}">Sản phẩm</a></li>
+
+
+                    <li><a href="./contact.html">Liên Hệ</a></li>
+                    <li><a href="#">Khác</a>
+                        <ul class="dropdown">
+
+                            <li><a th:href="@{/cart}">Giỏ hàng</a></li>
+                            <li><a th:href="@{/login}">Đăng kí</a></li>
+                            <li><a th:href="@{/login}">Đăng nhập</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </div>
+</header>
+<!-- Header End -->
+
+
+<!-- Hero Section Begin -->
+<section class="hero-section">
+    <div class="hero-items owl-carousel">
+        <div class="single-hero-items set-bg" data-setbg="img/hero-1.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span>XXXX</span>
+                        <h1>Black friday</h1>
+                        <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                        <a href="#" class="primary-btn">Mua ngay</a>
+                    </div>
+                </div>
+                <div class="off-card">
+                    <h2>Sale <span>50%</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="single-hero-items set-bg" data-setbg="img/hero-2.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span>XXXX</span>
+                        <h1>Black friday</h1>
+                        <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                        <a href="#" class="primary-btn">Mua ngay</a>
+                    </div>
+                </div>
+                <div class="off-card">
+                    <h2>Sale <span>50%</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Banner Section Begin -->
+<div class="banner-section spad">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="img/banner-1.jpg" alt="">
+                    <div class="inner-text">
+                        <h4>Ly</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="img/banner-2.jpg" alt="">
+                    <div class="inner-text">
+                        <h4>Bình nước</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="img/banner-3.jpg" alt="">
+                    <div class="inner-text">
+                        <h4>Cốc</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Section End -->
+
+<!-- Women Banner Section Begin -->
+<section class="women-banner spad">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
+                    <h2>Bình nước</h2>
+                    <a href="#">Xem thêm</a>
+                </div>
+            </div>
+            <div class="col-lg-8 offset-lg-1">
+
+<!--                <div class="col-4" th:each="product : ${products}">-->
+<!--                    <img th:src="@{${'/productImages/' + product.imageName}}">-->
+<!--                    <h4 th:text="${product.name}"></h4>-->
+<!--                    <h4>MLB</h4>-->
+<!--                    <p th:text="${product.price}"></p>-->
+<!--                </div>-->
+
+                <div class="product-slider owl-carousel" >
+                    <div class="product-item" th:each="product : ${products}">
+                        <div class="pi-pic">
+                            <img th:src="@{${'/productImages/' + product.imageName}}" alt="">
+                            <div class="sale">Sale</div>
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="#">+ Xem chi tiết</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pi-text">
+                            <div th:text="${product.category.getName()}">Coat</div>
+                            <a href="#">
+                                <h5 th:text="${product.name}" >Pure Pineapple</h5>
+                            </a>
+                            <div class="product-price">
+                                   <h6 th:text="${product.price}"></h6>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Women Banner Section End -->
+
+<!-- Deal Of The Week Section Begin-->
+<section class="deal-of-week set-bg spad" data-setbg="img/time-bg.jpg">
+    <div class="container">
+        <div class="col-lg-6 text-center">
+            <div class="section-title">
+                <h2>Giảm giá trong tháng</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
+                    consectetur adipisicing elit </p>
+                <div class="product-price">
+                    $35.00
+                    <span>/ Bình nước</span>
+                </div>
+            </div>
+            <div class="countdown-timer" id="countdown">
+                <div class="cd-item">
+                    <span>56</span>
+                    <p>Days</p>
+                </div>
+                <div class="cd-item">
+                    <span>12</span>
+                    <p>Hrs</p>
+                </div>
+                <div class="cd-item">
+                    <span>40</span>
+                    <p>Mins</p>
+                </div>
+                <div class="cd-item">
+                    <span>52</span>
+                    <p>Secs</p>
+                </div>
+            </div>
+            <a href="#" class="primary-btn">Mua ngay</a>
+        </div>
+    </div>
+</section>
+<!-- Deal Of The Week Section End -->
+
+
+
+
+
+<!-- Latest Blog Section Begin -->
+<section class="latest-blog spad">
+    <div class="container">
+        <div class="benefit-items">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-benefit">
+                        <div class="sb-icon">
+                            <img src="img/icon-1.png" alt="">
+                        </div>
+                        <div class="sb-text">
+                            <h6>Miễn phí vận chuyển nội thành HCM</h6>
+                            <p>cho đơn hàng trên 200.000 VND</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-benefit">
+                        <div class="sb-icon">
+                            <img src="img/icon-2.png" alt="">
+                        </div>
+                        <div class="sb-text">
+                            <h6>Cam kết giao hàng nhanh</h6>
+                            <p>từ 2-4 ngày</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-benefit">
+                        <div class="sb-icon">
+                            <img src="img/icon-1.png" alt="">
+                        </div>
+                        <div class="sb-text">
+                            <h6>Hoàn tiền 100%</h6>
+                            <p>nếu hàng hư hỏng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Blog Section End -->
+
+
+<!-- Footer Section Begin -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                    </div>
+                    <ul>
+                        <li>Address: Quận 11 , Hồ Chí Minh</li>
+                        <li>Phone: +65 11.188.888</li>
+                        <li>Email: huytc13@gmail.com</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1">
+                <div class="footer-widget">
+                    <h5>Thông tin</h5>
+                    <ul>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Thanh toán</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Dịch vụ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="footer-widget">
+                    <h5>Tài khoản của bạn</h5>
+                    <ul>
+                        <li><a href="#">Tài khoản</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Giỏ hàng</a></li>
+                        <li><a href="#">Mua sắm</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="newslatter-item">
+                    <h5>Tham gia ngay</h5>
+                    <p>Chúng tôi sẽ gửi e-mail đến bạn khi có sản phẩm mới.</p>
+                    <form action="#" class="subscribe-form">
+                        <input type="text" placeholder="Nhập e-mail">
+                        <button type="button">Đăng kí</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Js Plugins -->
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/jquery.countdown.min.js"></script>
+<script src="/js/jquery.nice-select.min.js"></script>
+<script src="/js/jquery.zoom.min.js"></script>
+<script src="/js/jquery.dd.min.js"></script>
+<script src="/js/jquery.slicknav.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

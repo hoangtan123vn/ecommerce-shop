@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="/css/themify-icons.css" >
+    <link rel="stylesheet" href="/css/elegant-icons.css" >
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" >
+    <link rel="stylesheet" href="/css/nice-select.css" >
+    <link rel="stylesheet" href="/css/jquery-ui.min.css" >
+    <link rel="stylesheet" href="/css/slicknav.min.css" >
+    <link rel="stylesheet" href="/css/stylesheet.css" >
+    <title>Document</title>
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="header-top">
+        <div class="container">
+            <div class="ht-left">
+                <div class="mail-service">
+                    <i class=" fa fa-envelope"></i>
+                    hello.colorlib@gmail.com
+                </div>
+                <div class="phone-service">
+                    <i class=" fa fa-phone"></i>
+                    +65 11.188.888
+                </div>
+            </div>
+            <div class="ht-right">
+                <a class="login-panel" sec:authorize="isAnonymous()" th:href="@{/login}" ><i class="fa fa-user"></i>Đăng nhập</a>
+                <a class="login-panel" sec:authorize="isAuthenticated()" th:href="@{/logout}"><i class="fa fa-user"></i>logout</a>
+                <div class="top-social">
+
+                    <a href="#"><i class="ti-linkedin"></i></a>
+                    <a href="#"><i class="ti-instagram"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="inner-header">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    <div class="advanced-search">
+                        <button type="button" class="category-btn">Tìm kiếm</button>
+                        <div class="input-group">
+                            <input type="text" placeholder="Tìm kiếm . . .">
+                            <button type="button"><i class="ti-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-right col-md-3">
+                    <ul class="nav-right">
+                        <li class="cart-icon">
+                            <a th:href="@{/cart}">
+                                <i class="icon_bag_alt"></i>
+                                <span th:text="${cartCount}">0</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-item">
+        <div class="container">
+            <div class="nav-depart">
+                <div class="depart-btn">
+                    <i class="ti-menu"></i>
+                    <span>Tất Cả Sản Phẩm</span>
+                    <ul class="depart-hover">
+                        <li class="active"><a href="#">Cốc</a></li>
+                        <li><a href="#">Ly</a></li>
+                        <li><a href="#">Bình nước</a></li>
+                        <li><a href="#">Hộp cơm</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="nav-menu mobile-menu">
+                <ul>
+                    <li class="active"><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./shop.html">Sản phẩm</a></li>
+
+                    <li><a href="./contact.html">Liên hệ</a></li>
+                    <li><a href="#">Khác</a>
+                        <ul class="dropdown">
+
+                            <li><a href="./shopping-cart.html">Giỏ hàng</a></li>
+                            <li><a href="./check-out.html">Thanh toán</a></li>
+                            <li><a href="./faq.html">Faq</a></li>
+                            <li><a href="./register.html">Đăng kí</a></li>
+                            <li><a href="./login.html">Đăng nhập</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </div>
+</header>
+<!-- Header End -->
+
+
+
+<!-- Js Plugins -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery.zoom.min.js"></script>
+<script src="js/jquery.dd.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
